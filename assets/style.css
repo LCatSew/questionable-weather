@@ -1,0 +1,50 @@
+:root {
+    --midnight: #1d3557;
+    --dusk: #457b9d;
+    --cool: #edf6f9;
+    --sun: #ffb703;
+    --citrus: #fb8500;
+    margin: 0;
+}
+
+header {
+    color: var(--cool);
+    background-color: var(--midnight);
+    width: 100 vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    background-color: var(--citrus);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+form {
+    
+}
+
+label {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#btn {
+    margin-top: 4%;
+    background-color: #457b9d;
+}
+
+.container {
+    display: flex;
+    justify-content: ;
+    flex-direction: column;
+    align-items: end;
+    width: 80%;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Semantic UI Framework -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <!-- Reset not appliccable -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    <header>
+        <!-- header content-->
+        <h1> Weather Dashboard</h2>
+    </header>
+    <main>
+        <aside>
+            <section class="ui left visible sidebar">
+            <!-- search form and search history-->
+                <form id="city-form" class="ui small form">
+                    <!-- Search form-->
+                    <div class="field">
+                        <label class="form label" for="city" style="font-size: larger;">Search by City</label>
+                        <input id="city" class="input" type="text" placeholder="City" style="margin-bottom: 5%;">
+                        <button type="submit" class="btn ui blue button ">Get Weather Forecast</button>
+                    </div>
+                </form>
+                <div id="searchHistory" class="ui middle aligned selection list">
+                    <li>search history</li>
+                    <li>search history</li>
+                    <!-- Search History-->
+                    <!--You'll have to use local storage / create an <li> element in js-->
+                    <!--append to search history id -->
+                    <!--we will store cities in an array and then push to retreive that storage-->
+                </div>
+            </section>
+        </aside>
+        <div class="container" id="segmentBody">
+            <div class="ui horizontal segments">
+                <div id="dayZero" class="ui segment"></div>
+                <div id="dayOne" class="ui segment"></div>
+                <div id="dayTwo" class="ui segment"></div>
+                <div id="dayThree" class="ui segment"></div>
+                <div id="dayFour" class="ui segment"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="assets/script.js"></script>
+</body>
+</html>
