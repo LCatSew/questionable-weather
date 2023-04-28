@@ -40,8 +40,8 @@ var dayFour = document.getElementById("dayFour");
 
 var getCityForecast = function (city) {
     console.log(city);
-    var queryURLForecast = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
-    var queryURLCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
+    var queryURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
+    var queryURLCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
     
     fetchBtn.addEventListener('submit', getAPI());
     segmentsBody.classList.remove("hide");
