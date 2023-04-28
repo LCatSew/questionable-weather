@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <!-- Reset not appliccable -->
+    <link rel="stylesheet" href="./assets/reset.css"
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/style.css">
 </head>
@@ -31,8 +32,7 @@
                     </div>
                 </form>
                 <div id="searchHistory" class="ui middle aligned selection list">
-                    <li>search history</li>
-                    <li>search history</li>
+                    
                     <!-- Search History-->
                     <!--You'll have to use local storage / create an <li> element in js-->
                     <!--append to search history id -->
@@ -40,9 +40,9 @@
                 </div>
             </section>
         </aside>
-        <div class="container" id="segmentBody">
+        <div class="container hide" id="segmentBody">
+            <article id="dayZero" class="ui item"></article>
             <div class="ui horizontal segments">
-                <div id="dayZero" class="ui segment"></div>
                 <div id="dayOne" class="ui segment"></div>
                 <div id="dayTwo" class="ui segment"></div>
                 <div id="dayThree" class="ui segment"></div>

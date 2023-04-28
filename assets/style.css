@@ -43,8 +43,29 @@ label {
 
 .container {
     display: flex;
-    justify-content: ;
     flex-direction: column;
-    align-items: end;
-    width: 80%;
+    width: 70%;
+    flex-wrap: wrap;
+    margin-left: 25%;
+}
+
+.hide {
+    visibility: hidden;
+}
+#dayZero {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#searchHistory {
+    position: relative;
+    left: -38%;
+}
+
+li {
+    padding: 5%;
 }

@@ -15,16 +15,21 @@ var formSubmitHandler = function (event) {
     if (city) {
         getCityForecast(city);
     }
+
+    searches.push(city);
+    cityInputEl.value = "";
+
+    storedSearches();
+    renderSearchHistoryList();
 }
 
 
 var segmentsBody = document.getElementById("segmentBody");
 var fetchBtn = document.getElementById("city");
 var segmentCell = document.getElementsByClassName("ui segment");
-//var tempDataEl = document.querySelector("p");//change this to temp
 
-console.log(segmentCell);//cool
-//console.log(tempDataEl);//cool
+//console.log(segmentCell);//nice
+//console.log(tempDataEl);//nice
 
 //todays weather
 var dayZero = document.getElementById("dayZero")
@@ -39,6 +44,7 @@ var getCityForecast = function (city) {
     var queryURLCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
     
     fetchBtn.addEventListener('submit', getAPI());
+    segmentsBody.classList.remove("hide");
     
     function getAPI(){
         fetch(queryURLCurrent)
@@ -160,11 +166,51 @@ var getCityForecast = function (city) {
                 dayFour.appendChild(humidityDataEl);
 
                 //look at "for each"//
-                //const fruits = ["apple", "orange", "cherry"];
-                //fruits.forEach(myFunction);
+                //could have done a var.forEach(myFunction); here but will try that next time
 
             })
-        }
+
+    }
+}
+
+var searchHistory = document.querySelector("#searchHistory");
+
+var searches = [];
+
+function renderSearchHistoryList() {
+    searchHistory.innerHTML = "";
+
+    //renders a new li for each city search
+    for (var i = 0; i < searches.length; i++) {
+        var search = searches[i];
+
+        var li = document.createElement("li");
+        li.textContent = search;
+        li.setAttribute("data-index", i);
+
+        searchHistory.appendChild(li);
+    }
+}
+
+// This function is being called below and will run when the page loads.
+function init() {
+    // Get stored searches from localStorage
+    var storedSearches = JSON.parse(localStorage.getItem("searches"));
+
+    // If searches were retrieved from localStorage, update the searches array to it
+    if (storedSearches !== null) {
+        searches = storedSearches;
+    }
+
+    // This is a helper function that will render searches to the DOM
+    renderSearchHistoryList();
+}
+
+function storedSearches() {
+    localStorage.setItem("searches", JSON.stringify(searches));
 }
 
 cityFormEl.addEventListener ("submit", formSubmitHandler);
+
+// Calls init to retrieve data and render it to the page on load
+init()
