@@ -26,3 +26,6 @@ WHEN I click on a city in the search history
 ## Final Functionality
 
 ![gif of final functionality](./assets/images/weatherdashbaord.gif)
+
+## Sources
+I had a study session with Seth and Melissa Dorna where we worked together in geting data from the apis
